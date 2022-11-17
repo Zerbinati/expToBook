@@ -1,0 +1,9 @@
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\bin\Debug\expToBook.exe.config
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\bin\Debug\expToBook.exe
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\bin\Debug\expToBook.pdb
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\bin\Debug\expToBook.xml
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\obj\Debug\expToBook.Resources.resources
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\obj\Debug\expToBook.vbproj.GenerateResource.Cache
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\obj\Debug\expToBook.exe
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\obj\Debug\expToBook.xml
+C:\Users\chris\Documents\Visual Studio 2013\Projects\expToBook\expToBook\obj\Debug\expToBook.pdb
