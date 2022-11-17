@@ -13,6 +13,7 @@ set fichierEXP to path_to_your_experience_file.exp<p>
 2°) conversion in progress :<br>
 ![2 converting](https://github.com/chris13300/expToBook/blob/main/expToBook/bin/Debug/2.%20converting.jpg)<p>
 
-How it works ?<br>
+How it works ?<p>
+  
 At best, it searches until the [100th ply](https://github.com/chris13300/expToBook/blob/main/expToBook/modMain.vb#L55) from the EXP file and it adds until [3 bestmoves](https://github.com/chris13300/expToBook/blob/main/expToBook/modMain.vb#L155) per position. The percentages of the book's moves are calculated according to the quality's values of bestmoves from the EXP file.<br>
 ![expToBook](https://github.com/chris13300/expToBook/blob/main/expToBook/bin/Debug/expToBook.jpg)<br>
