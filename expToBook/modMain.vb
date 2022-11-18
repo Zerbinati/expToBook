@@ -284,6 +284,8 @@
         Dim tabLivre(15) As Byte, hash As String, offset As Integer, i As Integer, chaine As String
         Dim roqueDispo As String, tabChaine() As String
 
+        chaine = ""
+
         'position
         If memPositionEPD = positionEPD Then
             hash = memHash
@@ -312,29 +314,38 @@
         If InStr(exclusion, hash & ":" & coup) = 0 Then
             exclusion = exclusion & hash & ":" & coup & ";"
 
-            offset = 0
-            For i = 0 To 14 Step 2
-                tabLivre(offset) = Byte.Parse(hash.Substring(i, 2), Globalization.NumberStyles.HexNumber)
-                offset = offset + 1
-            Next
-
+            'position
+            Try
+                offset = 0
+                For i = 0 To 14 Step 2
+                    tabLivre(offset) = Byte.Parse(hash.Substring(i, 2), Globalization.NumberStyles.HexNumber)
+                    offset = offset + 1
+                Next
+            Catch ex As Exception
+                MsgBox("positionEPD = '" & positionEPD & "'" & vbCrLf & "hash = '" & hash & "'", MsgBoxStyle.Critical, "calculHash error")
+            End Try
+            
             'coups
-            chaine = coupBinaire(coup)
-            chaine = binHex(chaine)
-            If Len(chaine) = 1 Then
-                tabLivre(8) = 0
-                tabLivre(9) = Byte.Parse(chaine.Substring(0, 1), Globalization.NumberStyles.HexNumber)
-            ElseIf Len(chaine) = 2 Then
-                tabLivre(8) = 0
-                tabLivre(9) = Byte.Parse(chaine.Substring(0, 2), Globalization.NumberStyles.HexNumber)
-            ElseIf Len(chaine) = 3 Then
-                tabLivre(8) = Byte.Parse(chaine.Substring(0, 1), Globalization.NumberStyles.HexNumber)
-                tabLivre(9) = Byte.Parse(chaine.Substring(1, 2), Globalization.NumberStyles.HexNumber)
-            ElseIf Len(chaine) = 4 Then
-                tabLivre(8) = Byte.Parse(chaine.Substring(0, 2), Globalization.NumberStyles.HexNumber)
-                tabLivre(9) = Byte.Parse(chaine.Substring(2, 2), Globalization.NumberStyles.HexNumber)
-            End If
-
+            Try
+                chaine = coupBinaire(coup)
+                chaine = binHex(chaine)
+                If Len(chaine) = 1 Then
+                    tabLivre(8) = 0
+                    tabLivre(9) = Byte.Parse(chaine.Substring(0, 1), Globalization.NumberStyles.HexNumber)
+                ElseIf Len(chaine) = 2 Then
+                    tabLivre(8) = 0
+                    tabLivre(9) = Byte.Parse(chaine.Substring(0, 2), Globalization.NumberStyles.HexNumber)
+                ElseIf Len(chaine) = 3 Then
+                    tabLivre(8) = Byte.Parse(chaine.Substring(0, 1), Globalization.NumberStyles.HexNumber)
+                    tabLivre(9) = Byte.Parse(chaine.Substring(1, 2), Globalization.NumberStyles.HexNumber)
+                ElseIf Len(chaine) = 4 Then
+                    tabLivre(8) = Byte.Parse(chaine.Substring(0, 2), Globalization.NumberStyles.HexNumber)
+                    tabLivre(9) = Byte.Parse(chaine.Substring(2, 2), Globalization.NumberStyles.HexNumber)
+                End If
+            Catch ex As Exception
+                MsgBox("coup = '" & coup & "'" & vbCrLf & "chaine = '" & chaine & "'", MsgBoxStyle.Critical, "coupBinaire error")
+            End Try
+            
             'poids
             tabLivre(10) = 0
             tabLivre(11) = pourcentage
