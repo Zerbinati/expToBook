@@ -6,7 +6,7 @@ rename BUREAU.ini to YOUR-COMPUTER-NAME.ini<br>
 set moteurEXP to path_to_your_eman_engine.exe<br>
 set fichierEXP to path_to_your_experience_file.exp<br>
 copy [pg_key.exe](https://github.com/chris13300/expToBook/blob/main/expToBook/bin/Debug/pg_key.exe) in your expToBook folder<br>
-some users may need to install [Microsoft Visual C++ 2013 Redistribuable DLLs](https://www.microsoft.com/en-us/download/details.aspx?id=40784).
+some users may need to install [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784).<p>
 
 # Most common scenario
 1°) enter an UCI string :<br>
